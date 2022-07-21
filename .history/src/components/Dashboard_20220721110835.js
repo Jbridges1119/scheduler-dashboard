@@ -27,26 +27,15 @@ const data = [
 ];
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-
-    this.selectPanel = this.selectPanel.bind(this);
-  }
-
-
   state = { loading: false, focused: null };
 
-  selectPanel(id) {
-    this.setState({
-     focused: id
-    });
-   }
   render() {
     const dashboardClasses = classnames("dashboard", {
       "dashboard--focused": this.state.focused
      });
-
-   
+     const onClick = function(id) {
+      
+     }
     const panels = (
       this.state.focused
         ? data.filter((panel) => this.state.focused === panel.id)
@@ -58,8 +47,6 @@ class Dashboard extends Component {
           id={panel.id}
           label={panel.label}
           value={panel.value}
-          onSelect={this.selectPanel}
-          onClick={() => this.selectPanel()}
         />
       );
     });

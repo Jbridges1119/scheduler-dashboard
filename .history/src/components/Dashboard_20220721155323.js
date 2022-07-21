@@ -27,13 +27,6 @@ const data = [
 ];
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-
-    this.selectPanel = this.selectPanel.bind(this);
-  }
-
-
   state = { loading: false, focused: null };
 
   selectPanel(id) {
@@ -59,7 +52,7 @@ class Dashboard extends Component {
           label={panel.label}
           value={panel.value}
           onSelect={this.selectPanel}
-          onClick={() => this.selectPanel()}
+          onClick={this.selectPanel(panel.id)}
         />
       );
     });

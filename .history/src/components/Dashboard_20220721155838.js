@@ -59,7 +59,7 @@ class Dashboard extends Component {
           label={panel.label}
           value={panel.value}
           onSelect={this.selectPanel}
-          onClick={() => this.selectPanel()}
+          onClick={this.selectPanel}
         />
       );
     });
